@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-
-import { useProcessVideo } from "@/services/mockData";
 import { useNavigate } from "react-router-dom";
 import {
   Card,
@@ -31,14 +29,14 @@ const Index = () => {
   const handleNavigateToDashboard = () => {
     navigate("/dashboard");
   };
-  const { mutate: processVideo } = useProcessVideo();
+
 
   const videoMutation = useMutation({
     mutationFn: async (file: File) => {
       const formData = new FormData();
       formData.append('video', file);
 
-      const response = await fetch('http://localhost:3000/video-processing/upload', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/video-processing/upload`, {
         method: 'POST',
         body: formData
       });

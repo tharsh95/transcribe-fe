@@ -51,7 +51,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
 
   const loginMutation = useMutation({
     mutationFn: async (data: LoginFormValues) => {
-      const response = await fetch("http://localhost:3000/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -75,7 +75,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
   const registerMutation = useMutation({
     mutationFn: async (data: RegisterFormValues) => {
       const { confirmPassword, ...registerData } = data;
-      const response = await fetch("http://localhost:3000/auth/register", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/registter`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(registerData),

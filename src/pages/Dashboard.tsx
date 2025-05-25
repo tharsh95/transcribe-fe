@@ -43,7 +43,7 @@ const Dashboard = () => {
   } = useQuery<LectureData[]>({
     queryKey: ["lectures"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:3000/video-processing");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/video-processing`);
       if (!response.ok) {
         throw new Error("Failed to fetch lectures");
       }
