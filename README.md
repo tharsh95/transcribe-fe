@@ -4,8 +4,8 @@ Follow the steps below to clone the repository, install dependencies, and start 
 
 1. **Clone the Repo**
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/tharsh95/transcribe-fe.git
+   cd transcribe-fe
     ```
 2. **Install dependenncies**
    ```bash
