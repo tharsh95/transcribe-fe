@@ -75,7 +75,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
   const registerMutation = useMutation({
     mutationFn: async (data: RegisterFormValues) => {
       const { confirmPassword, ...registerData } = data;
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/registter`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(registerData),
